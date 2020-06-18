@@ -10,12 +10,11 @@ var notifications = mongoose.Schema({
     date:Date,
     content:String,
     type:String,
-    newField:String,
     userID:{type:mongoose.Schema.Types.ObjectId, ref:'user'}
 })
 var preferences = mongoose.Schema({
-    sound:String,
-    theme:String
+    sound:Array,
+    theme:Array
 })
 const userSchema = mongoose.Schema({
     firstName: String,
@@ -23,7 +22,7 @@ const userSchema = mongoose.Schema({
     email: String,
     password: String,
     avatar: String,
-    phoneNumber:Number,
+    phoneNumber:String,
     accountType:String,
     musicAccounts:[musicAccounts],
     notifications:[notifications],
